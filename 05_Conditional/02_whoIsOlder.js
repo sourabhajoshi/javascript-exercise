@@ -6,10 +6,6 @@ function compareAges(){
 
     let ageDiff = Math.abs(yourAge - MYAGE);
 
-    if (isNaN(yourAge)){
-        get
-    }
-
     let feeback = MYAGE > yourAge ? `You are ${ageDiff} years younger than me.` : `You are ${ageDiff} years older than me.`
     document.getElementById("compareAges").innerHTML = feeback
 }
