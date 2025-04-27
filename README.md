@@ -32,16 +32,16 @@ class ClassName {
 ```
 example 1. Creating a Person class
 ```
-// ✅ Step 1: Create a class
+// Step 1: Create a class
 class Person {
-  // ✅ Step 2: Constructor is a special method used to initialize objects
+  // Step 2: Constructor is a special method used to initialize objects
   constructor(name, age) {
-    // ✅ 'this' refers to the current object being created
+    // 'this' refers to the current object being created
     this.name = name; // Property: name
     this.age = age;   // Property: age
   }
 
-  // ✅ Step 3: Method inside class
+  // Step 3: Method inside class
   greet() {
     console.log(`Hi, my name is ${this.name} and I am ${this.age} years old.`);
   }
@@ -52,11 +52,11 @@ class Person {
   }
 }
 
-// ✅ Step 4: Create an object (instance) of the class
+// Step 4: Create an object (instance) of the class
 const person1 = new Person("Alice", 25); // Passing name and age to constructor
 const person2 = new Person("Bob", 15);
 
-// ✅ Step 5: Use methods
+// Step 5: Use methods
 person1.greet();         // Output: Hi, my name is Alice and I am 25 years old.
 console.log(person1.isAdult()); // true
 
@@ -263,7 +263,7 @@ Real-Life Analogy
 - You can't access the wiring or money box directly (private data)
 - The system decides what you can do and how
 
-✅ Summary
+Summary
 
 Feature	Encapsulation in JavaScript
 
@@ -315,7 +315,7 @@ class Student {
   }
 }
 
-// ✅ Using the Student class
+// Using the Student class
 const student1 = new Student("Rahul", 101);
 
 // Adding grades
@@ -400,7 +400,7 @@ class Printer {
   }
 }
 
-// ✅ Usage
+// Usage
 const myPrinter = new Printer();
 myPrinter.print("Project Report");
 
@@ -438,7 +438,7 @@ class PaymentProcessor {
     console.log("Logging transaction:", details);
   }
 
-  // ✅ Public method – exposed to the user
+  // Public method – exposed to the user
   makePayment(amount) {
     if (amount <= 0) {
       console.log("❌ Invalid amount. Payment failed.");
@@ -450,18 +450,18 @@ class PaymentProcessor {
     const fee = this.#calculateTransactionFee(amount);
     const finalAmount = amount + fee;
 
-    console.log(`✅ Payment of $${amount.toFixed(2)} successful! Total charged: $${finalAmount.toFixed(2)}`);
+    console.log(`Payment of $${amount.toFixed(2)} successful! Total charged: $${finalAmount.toFixed(2)}`);
 
     this.#logTransaction({ user: this.user, amount, fee, status: "Success" });
   }
 
-  // ✅ Public method – another simple interface
+  // Public method – another simple interface
   getPaymentStatus() {
     console.log("✔️ Your last payment was successful.");
   }
 }
 
-// ✅ Usage
+// Usage
 const customer1 = new PaymentProcessor("John Doe");
 
 customer1.makePayment(150);  // Uses the simple public method
@@ -601,7 +601,7 @@ duck.swim(); // From mixin
 
 example 1. Transport Management System. Build a system where: All Vehicles share common features (like startEngine), Cars and Bikes have specific features, Use Single, Multilevel, and Hierarchical inheritance
 ```
-// ✅ Base Class (Grandparent)
+// Base Class (Grandparent)
 class Transport {
   constructor(type) {
     this.type = type;
@@ -612,7 +612,7 @@ class Transport {
   }
 }
 
-// ✅ Inherited by Vehicle (Multilevel Inheritance)
+// Inherited by Vehicle (Multilevel Inheritance)
 class Vehicle extends Transport {
   constructor(type, brand) {
     super(type); // Call parent constructor
@@ -624,7 +624,7 @@ class Vehicle extends Transport {
   }
 }
 
-// ✅ Inherited by Car (Multilevel: Transport → Vehicle → Car)
+// Inherited by Car (Multilevel: Transport → Vehicle → Car)
 class Car extends Vehicle {
   constructor(brand, doors) {
     super("Car", brand); // 'type' passed as "Car"
@@ -636,7 +636,7 @@ class Car extends Vehicle {
   }
 }
 
-// ✅ Inherited by Bike (Hierarchical: Transport → Vehicle → Bike)
+// Inherited by Bike (Hierarchical: Transport → Vehicle → Bike)
 class Bike extends Vehicle {
   constructor(brand, hasHelmet) {
     super("Bike", brand);
@@ -648,7 +648,7 @@ class Bike extends Vehicle {
   }
 }
 
-// ✅ Create Objects
+// Create Objects
 const myCar = new Car("Toyota", 4);
 myCar.info();         // From Transport
 myCar.startEngine();  // From Vehicle
@@ -675,45 +675,45 @@ Just like how the word "run" can mean:
 
 example 1. Shape Drawing System
 ```
-// ✅ Base Class
+// Base Class
 class Shape {
   draw() {
     console.log("Drawing a generic shape 🎨");
   }
 }
 
-// ✅ Derived Class 1
+// Derived Class 1
 class Circle extends Shape {
   draw() {
     console.log("Drawing a circle ⭕");
   }
 }
 
-// ✅ Derived Class 2
+// Derived Class 2
 class Square extends Shape {
   draw() {
     console.log("Drawing a square 🔲");
   }
 }
 
-// ✅ Derived Class 3
+// Derived Class 3
 class Triangle extends Shape {
   draw() {
     console.log("Drawing a triangle 🔺");
   }
 }
 
-// ✅ Function that uses polymorphism
+// Function that uses polymorphism
 function renderShape(shape) {
   shape.draw(); // Calls correct draw() based on object type
 }
 
-// ✅ Create different shapes
+// Create different shapes
 const circle = new Circle();
 const square = new Square();
 const triangle = new Triangle();
 
-// ✅ Same method name, different behavior
+// Same method name, different behavior
 renderShape(circle);    // Output: Drawing a circle ⭕
 renderShape(square);    // Output: Drawing a square 🔲
 renderShape(triangle);  // Output: Drawing a triangle 🔺
@@ -727,45 +727,45 @@ example 2. Notification System. We want to send notifications through different 
 Each notification type should have a method send() — same method name, but different behavior.
 That's Polymorphism in action! 
 ```
-// ✅ Base class
+// Base class
 class Notification {
   send(message) {
     console.log("Sending generic notification: " + message);
   }
 }
 
-// ✅ Subclass for Email
+// Subclass for Email
 class EmailNotification extends Notification {
   send(message) {
     console.log(`📧 Sending Email: ${message}`);
   }
 }
 
-// ✅ Subclass for SMS
+// Subclass for SMS
 class SMSNotification extends Notification {
   send(message) {
     console.log(`📱 Sending SMS: ${message}`);
   }
 }
 
-// ✅ Subclass for Push Notification
+// Subclass for Push Notification
 class PushNotification extends Notification {
   send(message) {
     console.log(`🔔 Sending Push Notification: ${message}`);
   }
 }
 
-// ✅ Function that accepts any type of notification
+// Function that accepts any type of notification
 function notifyUser(notificationChannel, message) {
   notificationChannel.send(message); // Polymorphic behavior
 }
 
-// ✅ Creating different notification objects
+// Creating different notification objects
 const email = new EmailNotification();
 const sms = new SMSNotification();
 const push = new PushNotification();
 
-// ✅ Using polymorphism - same method, different results
+// Using polymorphism - same method, different results
 notifyUser(email, "Welcome to our platform!");
 notifyUser(sms, "Your OTP is 123456");
 notifyUser(push, "You have a new message!");
