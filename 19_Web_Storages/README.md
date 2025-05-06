@@ -8,6 +8,11 @@ localStorage is part of the Web Storage API in JavaScript that allows you to sto
 
 It's commonly used to store small amounts of data such as user preferences, app settings, or tokens.
 
+install package to use localStorage
+```
+npm install node-localstorage
+```
+
 **1. setItem(key, value)**
 
 Stores a key–value pair.
@@ -83,5 +88,31 @@ sessionStorage.removeItem('key');
 
 // Clear all items
 localStorage.clear();
+sessionStorage.clear();
+```
+
+#### **sessionStorage**
+
+sessionStorage is part of the Web Storage API in JavaScript that stores key–value pairs for the duration of a page session. A session lasts as long as the browser tab or window is open. Once it’s closed, the data is automatically cleared.
+
+```
+// Set data
+sessionStorage.setItem("user", "Sourabha");
+sessionStorage.setItem("theme", "dark");
+
+// Get data
+let user = sessionStorage.getItem("user");
+let theme = sessionStorage.getItem("theme");
+console.log(user);   // Sourabha
+console.log(theme);  // dark
+
+// Remove a key
+sessionStorage.removeItem("theme");
+
+// Check remaining keys
+console.log(sessionStorage.length); // 1
+console.log(sessionStorage.key(0)); // 'user'
+
+// Clear all session data
 sessionStorage.clear();
 ```
