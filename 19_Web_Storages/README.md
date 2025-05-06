@@ -50,6 +50,16 @@ Returns the key at the specified index.
 const firstKey = localStorage.key(0);
 ```
 
+example with object
+```
+const user = { name: 'Alice', age: 30 };
+localStorage.setItem('user', JSON.stringify(user));
+
+// Later...
+const storedUser = JSON.parse(localStorage.getItem('user'));
+console.log(storedUser.name); // 'Alice'
+```
+
 
 | Feature          | `localStorage`                             | `sessionStorage`                           |
 |------------------|--------------------------------------------|---------------------------------------------|
