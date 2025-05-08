@@ -1,4 +1,4 @@
-# OOP in JavaScript
+# OOPs in JavaScript
 
 Object-Oriented Programming is a programming paradigm that uses "objects" to model real-world things. Each object contains data (properties) and behavior (methods).
 
